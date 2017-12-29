@@ -7,7 +7,8 @@ import sys
 import taglib
 import os
 
-getbpm_api_key = "notsureifishouldbesharingthis"
+# TODO: load apikey from getsongbpm.txt
+getbpm_api_key = open(os.path.join(os.getcwd(), 'getsongbpm_api_key.txt')).read().replace('\n', '')
 
 songdata = taglib.File(os.path.join(os.getcwd(), 'fireinthehole.flac'))
 title = songdata.tags['TITLE'][0]
